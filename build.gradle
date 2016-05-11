@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '1.2.3'
+        id 'com.github.johnrengelman.shadow' version '1.2.3'
 }
 repositories {
     jcenter()
@@ -13,3 +13,17 @@ jar {
 dependencies {
     compile 'com.sparkjava:spark-core:2.5'
 }
+
+task run(dependsOn:jar)  {
+    dependsOn shadowJar
+    doLast {
+        javaexec {
+            main = "-jar";
+            args = [
+                "build/libs/jspark-demo1-all.jar"
+            ]
+        }
+    println 'Jspark-demo1-all running'
+    }
+}
+
