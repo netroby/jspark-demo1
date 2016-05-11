@@ -19,9 +19,11 @@ task run(dependsOn:jar)  {
     dependsOn shadowJar
     doLast {
         javaexec {
-            main = "-jar";
+            main = "-jar"
             args = [
-                "build/libs/jspark-demo1-all.jar"
+                "build/libs/jspark-demo1-all.jar",
+                "-XX:+UseG1GC",
+                "-Xmx2048m",
             ]
         }
     println 'Jspark-demo1-all running'
