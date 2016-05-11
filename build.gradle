@@ -12,6 +12,7 @@ jar {
 }
 dependencies {
     compile 'com.sparkjava:spark-core:2.5'
+    compile 'org.slf4j:slf4j-simple:1.7.13'
 }
 
 task run(dependsOn:jar)  {
