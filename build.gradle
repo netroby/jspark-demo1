@@ -5,6 +5,9 @@ plugins {
 repositories {
     jcenter()
 }
+
+jar.enabled = false
+
 jar {
     manifest {
         attributes 'Main-Class' : 'Main'
